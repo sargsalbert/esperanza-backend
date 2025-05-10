@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_tabblocks_two_column_tabs",
+  "info": {
+    "displayName": "TwoColumnTab",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "displayName": "items",
+      "type": "component",
+      "repeatable": true,
+      "component": "tabblocks.items"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_tabbed_slider_blocks",
+  "info": {
+    "displayName": "tabbedSliderBlock",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "TabItem": {
+      "displayName": "TabItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.tab-item"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

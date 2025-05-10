@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_tabblocks_items",
+  "info": {
+    "displayName": "items",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_tabblocks_bullet_tabs",
+  "info": {
+    "displayName": "BulletTab",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

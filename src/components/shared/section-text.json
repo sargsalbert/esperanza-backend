@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_section_texts",
+  "info": {
+    "displayName": "sectionText",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "introText": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
