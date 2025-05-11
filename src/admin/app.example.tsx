@@ -1,4 +1,4 @@
-import type { StrapiApp } from '@strapi/strapi/admin';
+import type { StrapiApp } from "@strapi/strapi/admin";
 
 export default {
   config: {
@@ -30,6 +30,20 @@ export default {
       // 'zh-Hans',
       // 'zh',
     ],
+    translations: {
+      en: {
+        "Auth.form.welcome.title": "Welcome to MyCompany!",
+      },
+    },
+    head: {
+      favicon: "./extensions/logo.png",
+    },
+    auth: {
+      logo: "./extensions/logo.png",
+    },
+    menu: {
+      logo: "./extensions/logo.png",
+    },
   },
   bootstrap(app: StrapiApp) {
     console.log(app);
