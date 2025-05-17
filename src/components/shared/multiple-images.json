@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_multiple_images",
+  "info": {
+    "displayName": "multipleImages",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "multipleImages": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

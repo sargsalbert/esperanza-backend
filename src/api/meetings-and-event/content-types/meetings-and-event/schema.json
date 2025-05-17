@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "villas",
+  "collectionName": "meetings_and_events",
   "info": {
-    "singularName": "villa",
-    "pluralName": "villas",
-    "displayName": "Villa",
+    "singularName": "meetings-and-event",
+    "pluralName": "meetings-and-events",
+    "displayName": "Meetings & Event",
     "description": ""
   },
   "options": {
@@ -21,12 +21,17 @@
       "repeatable": false,
       "component": "shared.hero-section"
     },
+    "timelessMomentstext": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
+    },
     "tabbedSliderBlock": {
       "type": "component",
       "repeatable": true,
       "component": "shared.tabbed-slider-block"
     },
-    "privateHeavensText": {
+    "contactUsText": {
       "type": "component",
       "repeatable": false,
       "component": "shared.section-text"

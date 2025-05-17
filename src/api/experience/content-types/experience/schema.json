@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "villas",
+  "collectionName": "experiences",
   "info": {
-    "singularName": "villa",
-    "pluralName": "villas",
-    "displayName": "Villa",
+    "singularName": "experience",
+    "pluralName": "experiences",
+    "displayName": "Experience",
     "description": ""
   },
   "options": {
@@ -19,17 +19,27 @@
     "heroSection": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-section"
+      "component": "shared.hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "exploreEsperanzaText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
     },
     "tabbedSliderBlock": {
       "type": "component",
       "repeatable": true,
       "component": "shared.tabbed-slider-block"
     },
-    "privateHeavensText": {
+    "sectionGridSlider": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.section-text"
+      "repeatable": true,
+      "component": "shared.section-grid-slider"
     },
     "seo": {
       "type": "component",

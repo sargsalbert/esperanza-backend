@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_section_grid_sliders",
+  "info": {
+    "displayName": "sectionGridSlider",
+    "icon": "emotionHappy",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "description": {
+      "type": "text",
+      "default": "\"\""
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

@@ -10,7 +10,7 @@
     "title": {
       "type": "string"
     },
-    "TabItem": {
+    "tabItem": {
       "displayName": "TabItem",
       "type": "component",
       "repeatable": true,
@@ -24,6 +24,14 @@
         "images",
         "files"
       ]
+    },
+    "infoLineText": {
+      "type": "string"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.action-button"
     }
   }
 }

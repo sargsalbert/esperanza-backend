@@ -369,139 +369,215 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'abouts';
+export interface ApiDestinationDestination extends Struct.SingleTypeSchema {
+  collectionName: 'destinations';
   info: {
-    description: 'Write about yourself and the content you create';
-    displayName: 'About';
-    pluralName: 'abouts';
-    singularName: 'about';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
-  collectionName: 'articles';
-  info: {
-    description: 'Create your blog content';
-    displayName: 'Article';
-    pluralName: 'articles';
-    singularName: 'article';
+    description: '';
+    displayName: 'Destination';
+    pluralName: 'destinations';
+    singularName: 'destination';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blocks: Schema.Attribute.DynamicZone<
-      [
-        'shared.media',
-        'shared.quote',
-        'shared.rich-text',
-        'shared.slider',
-        'tabblocks.items',
-      ]
+    afterMapText: Schema.Attribute.Text;
+    architectureDesignImages: Schema.Attribute.Component<
+      'shared.multiple-images',
+      false
     >;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    architectureDesignText: Schema.Attribute.Component<
+      'shared.section-text',
+      false
+    >;
+    beforeMapText: Schema.Attribute.Component<'shared.section-text', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
       }>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::article.article'
-    > &
-      Schema.Attribute.Private;
+      'api::destination.destination'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
-  collectionName: 'authors';
+export interface ApiDiningDining extends Struct.SingleTypeSchema {
+  collectionName: 'dinings';
   info: {
-    description: 'Create authors for your content';
-    displayName: 'Author';
-    pluralName: 'authors';
-    singularName: 'author';
+    description: '';
+    displayName: 'Dining';
+    pluralName: 'dinings';
+    singularName: 'dining';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    beyondTableText: Schema.Attribute.Component<'shared.section-text', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::author.author'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::dining.dining'>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', true>;
+    tabbedSliderBlock: Schema.Attribute.Component<
+      'shared.tabbed-slider-block',
+      true
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
+export interface ApiExperienceExperience extends Struct.SingleTypeSchema {
+  collectionName: 'experiences';
   info: {
-    description: 'Organize your content into categories';
-    displayName: 'Category';
-    pluralName: 'categories';
-    singularName: 'category';
+    description: '';
+    displayName: 'Experience';
+    pluralName: 'experiences';
+    singularName: 'experience';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    exploreEsperanzaText: Schema.Attribute.Component<
+      'shared.section-text',
+      false
+    >;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+      'api::experience.experience'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
+    sectionGridSlider: Schema.Attribute.Component<
+      'shared.section-grid-slider',
+      true
+    >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    tabbedSliderBlock: Schema.Attribute.Component<
+      'shared.tabbed-slider-block',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGalleryGallery extends Struct.SingleTypeSchema {
+  collectionName: 'galleries';
+  info: {
+    description: '';
+    displayName: 'Gallery';
+    pluralName: 'galleries';
+    singularName: 'gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery.gallery'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGiftCardGiftCard extends Struct.SingleTypeSchema {
+  collectionName: 'gift_cards';
+  info: {
+    description: '';
+    displayName: 'Gift card';
+    pluralName: 'gift-cards';
+    singularName: 'gift-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gift-card.gift-card'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    quietLuxuryText: Schema.Attribute.Component<'shared.section-text', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -540,6 +616,155 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    description: '';
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destinationImages: Schema.Attribute.Component<
+      'shared.multiple-images',
+      false
+    >;
+    destinationText: Schema.Attribute.Component<'shared.section-text', false>;
+    experiencesGridSlider: Schema.Attribute.Component<
+      'shared.section-grid-slider',
+      true
+    >;
+    experiencesText: Schema.Attribute.Component<'shared.section-text', false>;
+    headerTextWithSliderBlock: Schema.Attribute.Component<
+      'shared.header-text-with-slider-block',
+      true
+    >;
+    HeaderTextWithSliderBlockTwo: Schema.Attribute.Component<
+      'shared.header-text-with-slider-block',
+      true
+    >;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    wellnessGridSlider: Schema.Attribute.Component<
+      'shared.section-grid-slider',
+      true
+    >;
+    wellnessText: Schema.Attribute.Component<'shared.section-text', false>;
+  };
+}
+
+export interface ApiMeetingsAndEventMeetingsAndEvent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'meetings_and_events';
+  info: {
+    description: '';
+    displayName: 'Meetings & Event';
+    pluralName: 'meetings-and-events';
+    singularName: 'meetings-and-event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contactUsText: Schema.Attribute.Component<'shared.section-text', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::meetings-and-event.meetings-and-event'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    tabbedSliderBlock: Schema.Attribute.Component<
+      'shared.tabbed-slider-block',
+      true
+    >;
+    timelessMomentstext: Schema.Attribute.Component<
+      'shared.section-text',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRoomsAndSuiteRoomsAndSuite extends Struct.SingleTypeSchema {
+  collectionName: 'rooms_and_suites';
+  info: {
+    description: '';
+    displayName: 'Rooms & Suite';
+    pluralName: 'rooms-and-suites';
+    singularName: 'rooms-and-suite';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::rooms-and-suite.rooms-and-suite'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    spacesToBreatheText: Schema.Attribute.Component<
+      'shared.section-text',
+      false
+    >;
+    tabbedSliderBlock: Schema.Attribute.Component<
+      'shared.tabbed-slider-block',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVillaVilla extends Struct.SingleTypeSchema {
   collectionName: 'villas';
   info: {
@@ -551,18 +776,73 @@ export interface ApiVillaVilla extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroImage: Schema.Attribute.Media<'files' | 'images'>;
-    heroImageText: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::villa.villa'> &
-      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::villa.villa'>;
+    privateHeavensText: Schema.Attribute.Component<
+      'shared.section-text',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    sectionText: Schema.Attribute.Component<'shared.section-text', false>;
-    TabbedSliderBlock: Schema.Attribute.Component<
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    tabbedSliderBlock: Schema.Attribute.Component<
+      'shared.tabbed-slider-block',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWellnessWellness extends Struct.SingleTypeSchema {
+  collectionName: 'wellnesses';
+  info: {
+    description: '';
+    displayName: 'Wellness';
+    pluralName: 'wellnesses';
+    singularName: 'wellness';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    facilitiesText: Schema.Attribute.Component<'shared.section-text', false>;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::wellness.wellness'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    ritualRenewalImages: Schema.Attribute.Component<
+      'shared.multiple-images',
+      false
+    >;
+    ritualRenewalText: Schema.Attribute.Component<'shared.section-text', false>;
+    sectionGridSlider: Schema.Attribute.Component<
+      'shared.section-grid-slider',
+      true
+    >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
     >;
@@ -1081,12 +1361,17 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about.about': ApiAboutAbout;
-      'api::article.article': ApiArticleArticle;
-      'api::author.author': ApiAuthorAuthor;
-      'api::category.category': ApiCategoryCategory;
+      'api::destination.destination': ApiDestinationDestination;
+      'api::dining.dining': ApiDiningDining;
+      'api::experience.experience': ApiExperienceExperience;
+      'api::gallery.gallery': ApiGalleryGallery;
+      'api::gift-card.gift-card': ApiGiftCardGiftCard;
       'api::global.global': ApiGlobalGlobal;
+      'api::home.home': ApiHomeHome;
+      'api::meetings-and-event.meetings-and-event': ApiMeetingsAndEventMeetingsAndEvent;
+      'api::rooms-and-suite.rooms-and-suite': ApiRoomsAndSuiteRoomsAndSuite;
       'api::villa.villa': ApiVillaVilla;
+      'api::wellness.wellness': ApiWellnessWellness;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

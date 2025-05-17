@@ -15,6 +15,10 @@
     },
     "tabContent": {
       "type": "blocks"
+    },
+    "useJsonContent": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -1,5 +1,46 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedActionButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_action_buttons';
+  info: {
+    displayName: 'actionButton';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.Text;
+    buttonText: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHeaderTextWithSliderBlock
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_header_text_with_slider_blocks';
+  info: {
+    displayName: 'headerTextWithSliderBlock';
+    icon: 'doctor';
+  };
+  attributes: {
+    sectionText: Schema.Attribute.Component<'shared.section-text', false>;
+    textImageSliderBlock: Schema.Attribute.Component<
+      'shared.text-image-slider-block',
+      true
+    >;
+  };
+}
+
+export interface SharedHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hero_sections';
+  info: {
+    description: '';
+    displayName: 'heroSection';
+    icon: 'check';
+  };
+  attributes: {
+    heroImage: Schema.Attribute.Media<'images' | 'files'>;
+    heroText: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -8,6 +49,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedMultipleImages extends Struct.ComponentSchema {
+  collectionName: 'components_shared_multiple_images';
+  info: {
+    displayName: 'multipleImages';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    multipleImages: Schema.Attribute.Media<'images' | 'files', true>;
   };
 }
 
@@ -36,15 +88,30 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSectionGridSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_section_grid_sliders';
+  info: {
+    description: '';
+    displayName: 'sectionGridSlider';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.DefaultTo<'""'>;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'""'>;
+  };
+}
+
 export interface SharedSectionText extends Struct.ComponentSchema {
   collectionName: 'components_shared_section_texts';
   info: {
+    description: '';
     displayName: 'sectionText';
     icon: 'layer';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    introText: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -99,6 +166,8 @@ export interface SharedTabItem extends Struct.ComponentSchema {
     contentJson: Schema.Attribute.JSON;
     label: Schema.Attribute.String;
     tabContent: Schema.Attribute.Blocks;
+    useJsonContent: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -110,8 +179,23 @@ export interface SharedTabbedSliderBlock extends Struct.ComponentSchema {
     icon: 'database';
   };
   attributes: {
+    actionButton: Schema.Attribute.Component<'shared.action-button', true>;
     images: Schema.Attribute.Media<'images' | 'files', true>;
-    TabItem: Schema.Attribute.Component<'shared.tab-item', true>;
+    infoLineText: Schema.Attribute.String;
+    tabItem: Schema.Attribute.Component<'shared.tab-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTextImageSliderBlock extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_image_slider_blocks';
+  info: {
+    displayName: 'textImageSliderBlock';
+    icon: 'feather';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     title: Schema.Attribute.String;
   };
 }
@@ -153,15 +237,21 @@ export interface TabblocksTwoColumnTab extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.action-button': SharedActionButton;
+      'shared.header-text-with-slider-block': SharedHeaderTextWithSliderBlock;
+      'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
+      'shared.multiple-images': SharedMultipleImages;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.section-grid-slider': SharedSectionGridSlider;
       'shared.section-text': SharedSectionText;
       'shared.seo': SharedSeo;
       'shared.simple-text': SharedSimpleText;
       'shared.slider': SharedSlider;
       'shared.tab-item': SharedTabItem;
       'shared.tabbed-slider-block': SharedTabbedSliderBlock;
+      'shared.text-image-slider-block': SharedTextImageSliderBlock;
       'tabblocks.bullet-tab': TabblocksBulletTab;
       'tabblocks.items': TabblocksItems;
       'tabblocks.two-column-tab': TabblocksTwoColumnTab;

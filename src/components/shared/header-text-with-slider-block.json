@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_header_text_with_slider_blocks",
+  "info": {
+    "displayName": "headerTextWithSliderBlock",
+    "icon": "doctor"
+  },
+  "options": {},
+  "attributes": {
+    "sectionText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
+    },
+    "textImageSliderBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-image-slider-block"
+    }
+  }
+}

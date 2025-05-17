@@ -2,11 +2,12 @@
   "collectionName": "components_shared_section_texts",
   "info": {
     "displayName": "sectionText",
-    "icon": "layer"
+    "icon": "layer",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "introText": {
+    "subtitle": {
       "type": "string"
     },
     "title": {

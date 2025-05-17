@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_hero_sections",
+  "info": {
+    "displayName": "heroSection",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heroText": {
+      "type": "string"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

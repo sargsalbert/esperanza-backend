@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "villas",
+  "collectionName": "rooms_and_suites",
   "info": {
-    "singularName": "villa",
-    "pluralName": "villas",
-    "displayName": "Villa",
+    "singularName": "rooms-and-suite",
+    "pluralName": "rooms-and-suites",
+    "displayName": "Rooms & Suite",
     "description": ""
   },
   "options": {
@@ -19,14 +19,19 @@
     "heroSection": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-section"
+      "component": "shared.hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "tabbedSliderBlock": {
       "type": "component",
       "repeatable": true,
       "component": "shared.tabbed-slider-block"
     },
-    "privateHeavensText": {
+    "spacesToBreatheText": {
       "type": "component",
       "repeatable": false,
       "component": "shared.section-text"

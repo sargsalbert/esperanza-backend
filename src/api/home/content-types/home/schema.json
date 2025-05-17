@@ -1,0 +1,71 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "destinationText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
+    },
+    "destinationImages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.multiple-images"
+    },
+    "headerTextWithSliderBlock": {
+      "displayName": "headerTextWithSliderBlock",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.header-text-with-slider-block"
+    },
+    "wellnessText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
+    },
+    "wellnessGridSlider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.section-grid-slider"
+    },
+    "HeaderTextWithSliderBlockTwo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.header-text-with-slider-block"
+    },
+    "experiencesText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
+    },
+    "experiencesGridSlider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.section-grid-slider"
+    }
+  }
+}

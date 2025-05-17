@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "villas",
+  "collectionName": "dinings",
   "info": {
-    "singularName": "villa",
-    "pluralName": "villas",
-    "displayName": "Villa",
+    "singularName": "dining",
+    "pluralName": "dinings",
+    "displayName": "Dining",
     "description": ""
   },
   "options": {
@@ -21,19 +21,19 @@
       "repeatable": false,
       "component": "shared.hero-section"
     },
+    "beyondTableText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-text"
+    },
     "tabbedSliderBlock": {
       "type": "component",
       "repeatable": true,
       "component": "shared.tabbed-slider-block"
     },
-    "privateHeavensText": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.section-text"
-    },
     "seo": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "shared.seo"
     }
   }
