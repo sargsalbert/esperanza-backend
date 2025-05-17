@@ -110,6 +110,7 @@ export interface SharedSectionText extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
+    buttonText: Schema.Attribute.Text;
     description: Schema.Attribute.Text;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
