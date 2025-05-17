@@ -564,6 +564,7 @@ export interface ApiGiftCardGiftCard extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    formBottomNote: Schema.Attribute.Blocks;
     heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
