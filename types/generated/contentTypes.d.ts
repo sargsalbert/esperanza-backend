@@ -703,6 +703,10 @@ export interface ApiMeetingsAndEventMeetingsAndEvent
       'api::meetings-and-event.meetings-and-event'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    sectionGridSlider: Schema.Attribute.Component<
+      'shared.section-grid-slider',
+      true
+    >;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',

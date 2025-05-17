@@ -40,6 +40,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "sectionGridSlider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.section-grid-slider"
     }
   }
 }
