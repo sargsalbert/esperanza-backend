@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_use_text_fields_insteads",
+  "info": {
+    "displayName": "useTextFieldsInstead",
+    "icon": "chartCircle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "firstTextField": {
+      "type": "string"
+    },
+    "secondTextField": {
+      "type": "string"
+    }
+  }
+}

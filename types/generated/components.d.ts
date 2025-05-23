@@ -3,12 +3,14 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SharedActionButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_action_buttons';
   info: {
+    description: '';
     displayName: 'actionButton';
     icon: 'chartCircle';
   };
   attributes: {
-    buttonLink: Schema.Attribute.Text;
     buttonText: Schema.Attribute.String;
+    buttonUrl: Schema.Attribute.String;
+    newTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -110,8 +112,10 @@ export interface SharedSectionText extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
-    buttonText: Schema.Attribute.Text;
+    buttonText: Schema.Attribute.String;
+    buttonUrl: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+    newTab: Schema.Attribute.Boolean;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -164,11 +168,13 @@ export interface SharedTabItem extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    contentJson: Schema.Attribute.JSON;
     label: Schema.Attribute.String;
     tabContent: Schema.Attribute.Blocks;
-    useJsonContent: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
+    useSeparateFields: Schema.Attribute.Boolean;
+    useTextFieldsInstead: Schema.Attribute.Component<
+      'shared.use-text-fields-instead',
+      true
+    >;
   };
 }
 
@@ -198,6 +204,19 @@ export interface SharedTextImageSliderBlock extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedUseTextFieldsInstead extends Struct.ComponentSchema {
+  collectionName: 'components_shared_use_text_fields_insteads';
+  info: {
+    description: '';
+    displayName: 'useTextFieldsInstead';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    firstTextField: Schema.Attribute.String;
+    secondTextField: Schema.Attribute.String;
   };
 }
 
@@ -253,6 +272,7 @@ declare module '@strapi/strapi' {
       'shared.tab-item': SharedTabItem;
       'shared.tabbed-slider-block': SharedTabbedSliderBlock;
       'shared.text-image-slider-block': SharedTextImageSliderBlock;
+      'shared.use-text-fields-instead': SharedUseTextFieldsInstead;
       'tabblocks.bullet-tab': TabblocksBulletTab;
       'tabblocks.items': TabblocksItems;
       'tabblocks.two-column-tab': TabblocksTwoColumnTab;

@@ -2,15 +2,20 @@
   "collectionName": "components_shared_action_buttons",
   "info": {
     "displayName": "actionButton",
-    "icon": "chartCircle"
+    "icon": "chartCircle",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "buttonText": {
       "type": "string"
     },
-    "buttonLink": {
-      "type": "text"
+    "buttonUrl": {
+      "type": "string"
+    },
+    "newTab": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

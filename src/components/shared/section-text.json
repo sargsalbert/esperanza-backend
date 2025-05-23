@@ -17,7 +17,13 @@
       "type": "text"
     },
     "buttonText": {
-      "type": "text"
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    },
+    "newTab": {
+      "type": "boolean"
     }
   }
 }

@@ -10,15 +10,16 @@
     "label": {
       "type": "string"
     },
-    "contentJson": {
-      "type": "json"
-    },
     "tabContent": {
       "type": "blocks"
     },
-    "useJsonContent": {
-      "type": "boolean",
-      "default": false
+    "useTextFieldsInstead": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.use-text-fields-instead"
+    },
+    "useSeparateFields": {
+      "type": "boolean"
     }
   }
 }
