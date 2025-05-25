@@ -386,16 +386,36 @@ export interface ApiDestinationDestination extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    afterMapText: Schema.Attribute.Text;
+    afterMapText: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     architectureDesignImages: Schema.Attribute.Component<
       'shared.multiple-images',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     architectureDesignText: Schema.Attribute.Component<
       'shared.section-text',
       false
-    >;
-    beforeMapText: Schema.Attribute.Component<'shared.section-text', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    beforeMapText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -411,7 +431,12 @@ export interface ApiDestinationDestination extends Struct.SingleTypeSchema {
       'api::destination.destination'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    Seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -435,19 +460,39 @@ export interface ApiDiningDining extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    beyondTableText: Schema.Attribute.Component<'shared.section-text', false>;
+    beyondTableText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::dining.dining'>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', true>;
+    seo: Schema.Attribute.Component<'shared.seo', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -477,7 +522,12 @@ export interface ApiExperienceExperience extends Struct.SingleTypeSchema {
     exploreEsperanzaText: Schema.Attribute.Component<
       'shared.section-text',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -493,12 +543,27 @@ export interface ApiExperienceExperience extends Struct.SingleTypeSchema {
     sectionGridSlider: Schema.Attribute.Component<
       'shared.section-grid-slider',
       true
-    >;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -537,7 +602,12 @@ export interface ApiGalleryGallery extends Struct.SingleTypeSchema {
       'api::gallery.gallery'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -564,7 +634,12 @@ export interface ApiGiftCardGiftCard extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    formBottomNote: Schema.Attribute.Blocks;
+    formBottomNote: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -577,8 +652,18 @@ export interface ApiGiftCardGiftCard extends Struct.SingleTypeSchema {
       'api::gift-card.gift-card'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    quietLuxuryText: Schema.Attribute.Component<'shared.section-text', false>;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    quietLuxuryText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -625,10 +710,30 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
-    menuFooterEmail: Schema.Attribute.String;
-    menuFooterLocation: Schema.Attribute.String;
-    menuFooterPhone: Schema.Attribute.String;
-    menuFooterSmallText: Schema.Attribute.String;
+    menuFooterEmail: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    menuFooterLocation: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    menuFooterPhone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    menuFooterSmallText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
@@ -673,21 +778,51 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     destinationImages: Schema.Attribute.Component<
       'shared.multiple-images',
       false
-    >;
-    destinationText: Schema.Attribute.Component<'shared.section-text', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    destinationText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     experiencesGridSlider: Schema.Attribute.Component<
       'shared.section-grid-slider',
       true
-    >;
-    experiencesText: Schema.Attribute.Component<'shared.section-text', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    experiencesText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     headerTextWithSliderBlock: Schema.Attribute.Component<
       'shared.header-text-with-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     HeaderTextWithSliderBlockTwo: Schema.Attribute.Component<
       'shared.header-text-with-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -703,8 +838,18 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     wellnessGridSlider: Schema.Attribute.Component<
       'shared.section-grid-slider',
       true
-    >;
-    wellnessText: Schema.Attribute.Component<'shared.section-text', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    wellnessText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -726,11 +871,21 @@ export interface ApiMeetingsAndEventMeetingsAndEvent
     };
   };
   attributes: {
-    contactUsText: Schema.Attribute.Component<'shared.section-text', false>;
+    contactUsText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -740,16 +895,36 @@ export interface ApiMeetingsAndEventMeetingsAndEvent
     sectionGridSlider: Schema.Attribute.Component<
       'shared.section-grid-slider',
       true
-    >;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     timelessMomentstext: Schema.Attribute.Component<
       'shared.section-text',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -788,15 +963,30 @@ export interface ApiRoomsAndSuiteRoomsAndSuite extends Struct.SingleTypeSchema {
       'api::rooms-and-suite.rooms-and-suite'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     spacesToBreatheText: Schema.Attribute.Component<
       'shared.section-text',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -823,19 +1013,39 @@ export interface ApiVillaVilla extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::villa.villa'>;
     privateHeavensText: Schema.Attribute.Component<
       'shared.section-text',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -862,8 +1072,18 @@ export interface ApiWellnessWellness extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    facilitiesText: Schema.Attribute.Component<'shared.section-text', false>;
-    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    facilitiesText: Schema.Attribute.Component<'shared.section-text', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -873,17 +1093,45 @@ export interface ApiWellnessWellness extends Struct.SingleTypeSchema {
     ritualRenewalImages: Schema.Attribute.Component<
       'shared.multiple-images',
       false
-    >;
-    ritualRenewalText: Schema.Attribute.Component<'shared.section-text', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ritualRenewalText: Schema.Attribute.Component<
+      'shared.section-text',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     sectionGridSlider: Schema.Attribute.Component<
       'shared.section-grid-slider',
       true
-    >;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     tabbedSliderBlock: Schema.Attribute.Component<
       'shared.tabbed-slider-block',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

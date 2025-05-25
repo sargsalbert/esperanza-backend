@@ -29,25 +29,50 @@
     "beforeMapText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "afterMapText": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "architectureDesignText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "architectureDesignImages": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.multiple-images"
+      "component": "shared.multiple-images",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

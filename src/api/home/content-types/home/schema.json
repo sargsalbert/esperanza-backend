@@ -29,43 +29,83 @@
     "destinationText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "destinationImages": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.multiple-images"
+      "component": "shared.multiple-images",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "headerTextWithSliderBlock": {
       "displayName": "headerTextWithSliderBlock",
       "type": "component",
       "repeatable": true,
-      "component": "shared.header-text-with-slider-block"
+      "component": "shared.header-text-with-slider-block",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "wellnessText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "wellnessGridSlider": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.section-grid-slider"
+      "component": "shared.section-grid-slider",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "HeaderTextWithSliderBlockTwo": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.header-text-with-slider-block"
+      "component": "shared.header-text-with-slider-block",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "experiencesText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "experiencesGridSlider": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.section-grid-slider"
+      "component": "shared.section-grid-slider",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

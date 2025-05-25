@@ -19,38 +19,73 @@
     "heroSection": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-section"
+      "component": "shared.hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "ritualRenewalText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "ritualRenewalImages": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.multiple-images"
+      "component": "shared.multiple-images",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "facilitiesText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "sectionGridSlider": {
       "displayName": "sectionGridSlider",
       "type": "component",
       "repeatable": true,
-      "component": "shared.section-grid-slider"
+      "component": "shared.section-grid-slider",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "tabbedSliderBlock": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.tabbed-slider-block"
+      "component": "shared.tabbed-slider-block",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

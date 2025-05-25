@@ -19,22 +19,42 @@
     "heroSection": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-section"
+      "component": "shared.hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "beyondTableText": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-text"
+      "component": "shared.section-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "tabbedSliderBlock": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.tabbed-slider-block"
+      "component": "shared.tabbed-slider-block",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "seo": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
