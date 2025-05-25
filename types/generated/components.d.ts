@@ -54,6 +54,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMenuLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_menu_links';
+  info: {
+    displayName: 'menuLinks';
+    icon: 'cloud';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMultipleImages extends Struct.ComponentSchema {
   collectionName: 'components_shared_multiple_images';
   info: {
@@ -261,6 +272,7 @@ declare module '@strapi/strapi' {
       'shared.header-text-with-slider-block': SharedHeaderTextWithSliderBlock;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
+      'shared.menu-links': SharedMenuLinks;
       'shared.multiple-images': SharedMultipleImages;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -100,6 +100,17 @@
           "localized": true
         }
       }
+    },
+    "menuLinks": {
+      "displayName": "menuLinks",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.menu-links",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

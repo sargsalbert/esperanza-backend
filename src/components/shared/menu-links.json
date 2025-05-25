@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_menu_links",
+  "info": {
+    "displayName": "menuLinks",
+    "icon": "cloud"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}
