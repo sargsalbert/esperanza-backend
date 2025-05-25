@@ -1063,6 +1063,15 @@ export interface ApiRoomsAndSuiteRoomsAndSuite extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    bookButtonShowMobile: Schema.Attribute.Component<
+      'shared.action-button',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

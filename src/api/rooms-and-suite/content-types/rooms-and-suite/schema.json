@@ -55,6 +55,16 @@
           "localized": true
         }
       }
+    },
+    "bookButtonShowMobile": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.action-button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
