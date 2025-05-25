@@ -14,6 +14,17 @@ export interface SharedActionButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBookingWidget extends Struct.ComponentSchema {
+  collectionName: 'components_shared_booking_widgets';
+  info: {
+    displayName: 'bookingWidget';
+    icon: 'chartPie';
+  };
+  attributes: {
+    buttonCheckAvailabilityText: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeaderTextWithSliderBlock
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_header_text_with_slider_blocks';
@@ -269,6 +280,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.action-button': SharedActionButton;
+      'shared.booking-widget': SharedBookingWidget;
       'shared.header-text-with-slider-block': SharedHeaderTextWithSliderBlock;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
