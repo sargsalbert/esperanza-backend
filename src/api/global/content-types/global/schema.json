@@ -68,6 +68,18 @@
           "localized": true
         }
       }
+    },
+    "menuFooterPhone": {
+      "type": "string"
+    },
+    "menuFooterEmail": {
+      "type": "string"
+    },
+    "menuFooterLocation": {
+      "type": "string"
+    },
+    "menuFooterSmallText": {
+      "type": "string"
     }
   }
 }

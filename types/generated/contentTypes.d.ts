@@ -625,6 +625,10 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
+    menuFooterEmail: Schema.Attribute.String;
+    menuFooterLocation: Schema.Attribute.String;
+    menuFooterPhone: Schema.Attribute.String;
+    menuFooterSmallText: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
