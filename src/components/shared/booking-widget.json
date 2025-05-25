@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_booking_widgets",
+  "info": {
+    "displayName": "bookingWidget",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "buttonCheckAvailabilityText": {
+      "type": "string"
+    }
+  }
+}
