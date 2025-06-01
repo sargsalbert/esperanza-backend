@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_site_footer_socials",
+  "info": {
+    "displayName": "siteFooterSocial",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "linkUrl": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

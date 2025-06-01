@@ -169,6 +169,18 @@ export interface SharedSimpleText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSiteFooterSocial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_site_footer_socials';
+  info: {
+    displayName: 'siteFooterSocial';
+    icon: 'cog';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    linkUrl: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -292,6 +304,7 @@ declare module '@strapi/strapi' {
       'shared.section-text': SharedSectionText;
       'shared.seo': SharedSeo;
       'shared.simple-text': SharedSimpleText;
+      'shared.site-footer-social': SharedSiteFooterSocial;
       'shared.slider': SharedSlider;
       'shared.tab-item': SharedTabItem;
       'shared.tabbed-slider-block': SharedTabbedSliderBlock;

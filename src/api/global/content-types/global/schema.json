@@ -111,6 +111,49 @@
           "localized": true
         }
       }
+    },
+    "siteFooterSocial": {
+      "displayName": "siteFooterSocial",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.site-footer-social",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "siteFooterFormPlaceholder": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "siteFooterFormButtonText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "siteFooterBottomText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "siteFooterBottomTextUnderline": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
