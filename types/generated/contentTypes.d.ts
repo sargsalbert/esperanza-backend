@@ -590,7 +590,7 @@ export interface ApiGalleryGallery extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    galleryImages: Schema.Attribute.Component<'shared.multiple-images', true>;
+    galleryImages: Schema.Attribute.Component<'shared.multiple-images', false>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

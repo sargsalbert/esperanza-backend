@@ -38,7 +38,7 @@
     },
     "galleryImages": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "shared.multiple-images"
     }
   }
