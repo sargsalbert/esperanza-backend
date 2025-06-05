@@ -1,51 +1,22 @@
 export default ({ env }) => ({
-  email: {
-    config: {
-      provider: "strapi-provider-email-resend",
-      providerOptions: {
-        apiKey: env("SMTP_PASS"), // Required
-      },
-      settings: {
-        defaultFrom: env("SMTP_USER"),
-        defaultReplyTo: env("SMTP_USER"),
-        host: env("SMTP_HOST"),
-        port: env.int("SMTP_PORT"),
-        auth: {
-          user: env("SMTP_USER"),
-          pass: env("SMTP_PASS"),
-        },
-      },
-    },
-  },
-
   // email: {
-  //   provider: "smtp", // For community providers pass the full package name (e.g. provider: 'strapi-provider-email-mandrill')
-
-  //   settings: {
-  //     defaultFrom: env("SMTP_USER"),
-  //     defaultReplyTo: env("SMTP_USER"),
-  //     host: env("SMTP_HOST"),
-  //     port: env.int("SMTP_PORT"),
-  //     auth: {
-  //       user: env("SMTP_USER"),
-  //       pass: env("SMTP_PASS"),
+  //   config: {
+  //     provider: "strapi-provider-email-resend",
+  //     providerOptions: {
+  //       apiKey: env("SMTP_PASS"), // Required
   //     },
-  //   },
-  // },
-
-  // email: {
-  //     provider: 'smtp',
   //     settings: {
-  //       defaultFrom: env('SMTP_USER'),
-  //       defaultReplyTo: env('SMTP_USER'),
-  //       host: env('SMTP_HOST'),
-  //       port: env.int('SMTP_PORT'),
+  //       defaultFrom: env("SMTP_USER"),
+  //       defaultReplyTo: env("SMTP_USER"),
+  //       host: env("SMTP_HOST"),
+  //       port: env.int("SMTP_PORT"),
   //       auth: {
-  //         user: env('SMTP_USER'),
-  //         pass: env('SMTP_PASS'),
+  //         user: env("SMTP_USER"),
+  //         pass: env("SMTP_PASS"),
   //       },
   //     },
   //   },
+  // },
 
   upload: {
     config: {
