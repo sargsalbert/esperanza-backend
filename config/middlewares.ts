@@ -31,8 +31,6 @@ export default [
     },
   },
 
-  "strapi::cors",
-
   {
     name: "strapi::cors",
     config: {
@@ -42,7 +40,7 @@ export default [
         "https://esperanza-five.vercel.app",
       ], // include frontend origins
       methods: ["GET", "POST", "PUT", "DELETE"],
-      headers: "*",
+      headers: ["Content-Type", "Authorization"],
     },
   },
 
