@@ -31,19 +31,29 @@ export default [
     },
   },
 
+  // {
+  //   name: "strapi::cors",
+  //   config: {
+  //     origin: [
+  //       "http://localhost:3000",
+  //       "https://167.172.102.131:3000",
+  //       "https://167.172.102.131",
+  //       "https://esperanza-five.vercel.app",
+  //     ], // include frontend origins
+  //     credentials: true,
+
+  //     methods: ["GET", "POST", "PUT", "DELETE"],
+  //     headers: ["Content-Type", "Authorization"],
+  //   },
+  // },
+
   {
     name: "strapi::cors",
     config: {
-      origin: [
-        "http://localhost:3000",
-        "https://167.172.102.131:3000",
-        "https://167.172.102.131",
-        "https://esperanza-five.vercel.app",
-      ], // include frontend origins
+      origin: ["https://esperanza-five.vercel.app", "https://167.172.102.131"], // update with your real frontend domain
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+      headers: "*",
       credentials: true,
-
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      headers: ["Content-Type", "Authorization"],
     },
   },
 
