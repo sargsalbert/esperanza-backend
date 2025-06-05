@@ -32,6 +32,16 @@ export default [
   },
 
   "strapi::cors",
+
+  {
+    name: "strapi::cors",
+    config: {
+      origin: ["http://localhost:3000", "https://esperanza-five.vercel.app"], // include frontend origins
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      headers: "*",
+    },
+  },
+
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",
