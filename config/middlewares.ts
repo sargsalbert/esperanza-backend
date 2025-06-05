@@ -37,8 +37,11 @@ export default [
       origin: [
         "http://localhost:3000",
         "https://167.172.102.131:3000",
+        "https://167.172.102.131",
         "https://esperanza-five.vercel.app",
       ], // include frontend origins
+      credentials: true,
+
       methods: ["GET", "POST", "PUT", "DELETE"],
       headers: ["Content-Type", "Authorization"],
     },
