@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_us_forms",
+  "info": {
+    "singularName": "contact-us-form",
+    "pluralName": "contact-us-forms",
+    "displayName": "contact-us-form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "formSurname": {
+      "type": "string"
+    },
+    "formPhone": {
+      "type": "string"
+    },
+    "formEmail": {
+      "type": "email"
+    },
+    "formMessage": {
+      "type": "text"
+    },
+    "formNumberGuests": {
+      "type": "integer"
+    },
+    "formDatesItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.form-date"
+    }
+  }
+}

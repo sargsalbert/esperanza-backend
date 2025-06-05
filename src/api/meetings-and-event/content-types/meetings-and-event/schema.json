@@ -139,6 +139,14 @@
           "localized": true
         }
       }
+    },
+    "formSuccessText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

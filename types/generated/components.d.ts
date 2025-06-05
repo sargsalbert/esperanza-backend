@@ -25,6 +25,18 @@ export interface SharedBookingWidget extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFormDate extends Struct.ComponentSchema {
+  collectionName: 'components_shared_form_dates';
+  info: {
+    description: '';
+    displayName: 'formDate';
+    icon: 'chartPie';
+  };
+  attributes: {
+    formDates: Schema.Attribute.Date;
+  };
+}
+
 export interface SharedHeaderTextWithSliderBlock
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_header_text_with_slider_blocks';
@@ -293,6 +305,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.action-button': SharedActionButton;
       'shared.booking-widget': SharedBookingWidget;
+      'shared.form-date': SharedFormDate;
       'shared.header-text-with-slider-block': SharedHeaderTextWithSliderBlock;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;

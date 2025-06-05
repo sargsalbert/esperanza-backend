@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_form_dates",
+  "info": {
+    "displayName": "formDate",
+    "icon": "chartPie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "formDates": {
+      "type": "date"
+    }
+  }
+}

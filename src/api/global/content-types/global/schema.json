@@ -154,6 +154,14 @@
           "localized": true
         }
       }
+    },
+    "siteFooterFormSuccessMessage": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

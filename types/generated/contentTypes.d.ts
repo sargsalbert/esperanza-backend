@@ -369,6 +369,42 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactUsFormContactUsForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_us_forms';
+  info: {
+    description: '';
+    displayName: 'contact-us-form';
+    pluralName: 'contact-us-forms';
+    singularName: 'contact-us-form';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formDatesItem: Schema.Attribute.Component<'shared.form-date', true>;
+    formEmail: Schema.Attribute.Email;
+    formMessage: Schema.Attribute.Text;
+    formNumberGuests: Schema.Attribute.Integer;
+    formPhone: Schema.Attribute.String;
+    formSurname: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us-form.contact-us-form'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDestinationDestination extends Struct.SingleTypeSchema {
   collectionName: 'destinations';
   info: {
@@ -493,6 +529,36 @@ export interface ApiDiningDining extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEmailSubscriberEmailSubscriber
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'email_subscribers';
+  info: {
+    description: '';
+    displayName: 'Email Subscriber';
+    pluralName: 'email-subscribers';
+    singularName: 'email-subscriber';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::email-subscriber.email-subscriber'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -828,6 +894,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    siteFooterFormSuccessMessage: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     siteFooterSocial: Schema.Attribute.Component<
       'shared.site-footer-social',
       true
@@ -1018,6 +1090,12 @@ export interface ApiMeetingsAndEventMeetingsAndEvent
         };
       }>;
     formPhone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    formSuccessText: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1805,8 +1883,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::contact-us-form.contact-us-form': ApiContactUsFormContactUsForm;
       'api::destination.destination': ApiDestinationDestination;
       'api::dining.dining': ApiDiningDining;
+      'api::email-subscriber.email-subscriber': ApiEmailSubscriberEmailSubscriber;
       'api::experience.experience': ApiExperienceExperience;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::gift-card.gift-card': ApiGiftCardGiftCard;
