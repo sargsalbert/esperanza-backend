@@ -50,7 +50,11 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["https://esperanza-five.vercel.app", "http://localhost:3000"], // update with your real frontend domain
+      origin: [
+        "https://esperanza-five.vercel.app",
+        "https://esperanza-five.vercel.app/en",
+        "http://localhost:3000",
+      ], // update with your real frontend domain
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       headers: "*",
       credentials: true,
