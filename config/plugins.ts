@@ -34,4 +34,14 @@ export default ({ env }) => ({
       },
     },
   },
+
+  graphql: {
+    config: {
+      endpoint: "/graphql",
+      shadowCRUD: true,
+      playgroundAlways: true, // only for development
+      depthLimit: 7,
+      amountLimit: 100,
+    },
+  },
 });
