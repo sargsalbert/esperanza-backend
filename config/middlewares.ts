@@ -54,7 +54,7 @@ export default [
         "https://esperanza-five.vercel.app",
         "https://esperanza-five.vercel.app/en",
         "http://localhost:3000",
-        // "https://esperanza-app-a6wlj.ondigitalocean.app",
+        "https://esperanza-app-a6wlj.ondigitalocean.app",
       ], // update with your real frontend domain
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       headers: "*",
